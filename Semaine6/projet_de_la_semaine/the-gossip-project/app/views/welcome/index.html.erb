@@ -1,0 +1,18 @@
+<section class="container">
+
+<h1> Bienvenue l'ami.e!</h1>
+
+<h3> Voici la liste des gossips:<h3>
+<ul class="wlc row">
+  <% @all_gossip.each do |gossip| %>
+  <div class="card border-info m-4 col-3">
+    <div class="card-body">
+      <h5 class="card-title mb-2"><%= link_to "#{gossip.title}", gossip_path(gossip.id) %></h5>
+      <p class="card-text">"<%= "#{gossip.content[0...100]}..." %>"</p>
+      <p class="card-link">de <%= link_to "#{User.find(gossip.user_id).first_name} #{User.find(gossip.user_id).last_name}",author_path(gossip.user_id) %></p>
+    </div>
+  </div>
+
+  <% end %>
+</ul>
+</section>

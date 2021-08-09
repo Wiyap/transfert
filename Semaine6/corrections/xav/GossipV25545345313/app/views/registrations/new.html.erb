@@ -1,0 +1,32 @@
+<h1>Sign up </h1>
+<%# Crée un form avec les info de user mais l'envoie a '/sign_up' a la place %>
+<%# sign_up renvoie un post sur "registration#create" . cf: config/routes.rb %>
+  <% if @user.errors.any? %>
+  <div class="alert alert-danger">
+    <% @user.errors.full_messages.each do |msg| %>
+      <div><%= msg %></div>
+    <%end %>
+  </div>
+  <% end %>
+<%= form_with model: @user, url: sign_up_path, local: true do |f| %>
+
+  <%= f.label :prenom %>
+  <%= f.text_field :first_name %>
+  <%= f.label :nom %>
+  <%= f.text_field :last_name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+  <%= f.label :ville %>
+  <%= f.text_field :city_id %>
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+  <%= f.label :confirmation %>
+  <%= f.text_field :password_confirmation %>
+  <%= f.submit "Valider", class: 'btn btn-outline-success' %>
+  
+<% end %> 
+

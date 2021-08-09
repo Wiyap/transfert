@@ -1,0 +1,5 @@
+<%= form_with(model: [ @gossip, @gossip.comments.build ] do |form| %>
+
+    <%= form.label :titre %>
+    <%= form.text_field :title %>
+    

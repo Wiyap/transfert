@@ -1,0 +1,15 @@
+
+<h2>Bienvenue <%= Current.user.first_name if Current.user%>!</h2>
+
+
+<%# if Current.user %>
+<button class="btn btn-outline-warning"><%= link_to 'Créer un gossip', new_gossip_path  %></button>
+<%# end %>
+<div class="container d-flex flex-wrap col-10 gap-3 align-items-center justify-content-center mt-5 ">
+    <% @gossips.each do |gossip| %>
+        <div class="border border-light col-3 text-center p-4 xhover">
+            <h4><%=link_to gossip.title, gossip_path(gossip) %></h4>
+            <p><em>written by <%= link_to gossip.user.first_name, user_path(gossip.user_id) %></em></p>
+        </div>
+    <% end %>
+</div>

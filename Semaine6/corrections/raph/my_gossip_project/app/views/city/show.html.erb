@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The Gossip Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>    
+      footer {
+        background-color: #555;
+        color: white;
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="<%="/"%>">The Gossip Project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="<%="/home"%>">Home </a>
+        </li>
+        <% if is_logged_in? == true%>
+          <li class="nav-item active">
+              <a class="nav-link" href="<%="/potin/new"%>">New gossip </a>
+            </li>
+          <% end %>
+        <li class="nav-item">
+          <a class="nav-link" href="<%="/contact"%>">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%="/team"%>">Team</a>
+        </li>
+      </ul>
+      <div class="d-flex flex-row-reverse">
+        <ul class="navbar-nav mr-auto">
+         <% if is_logged_in? != true%>
+          <li class="nav-item active">
+            <a class="nav-link" href="<%="/sessions/new"%>">Sign in</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="<%="/user/new"%>">Sign up</a>
+          </li>
+          <% else %>
+            <% puts session[:User_id] %>
+            <li class="nav-item active">
+              <a class="nav-link" <%= link_to "Logout", session_path(session.id), method: :delete %></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="<%="/dashboard"%>">Dashboard</a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <div class="container">
+      <div class="p-4"></div>
+      <div>
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="container">
+            <h1><%= @city.name %></h1>
+            <div class="p-2"></div>
+            <p>Zip code : <%= @city.zip_code %></p>
+          </div>
+        </div>
+        <div class="col-sm-7">
+          <div class="container">
+            <h3>Imagine a big ass picture</h3>
+          </div>
+        </div>
+      </div>
+      <div class="p-4"></div>
+      <div class="row">
+        <div class="container">
+        <div class="d-flex justify-content-center text-center">
+          <h3>Take a look at all these shiny gossips !!</h3>
+          </div>
+          <div class="p-4"></div>
+          <% users = User.where(city_id: @city.id) %>
+          <% users.each do |user| %>
+            <% gossips = Gossip.where(user_id: user.id) %>
+            <% exists = false %>
+            <% gossips.each do |gossip| %>
+              <% if gossip.title != nil and exists == false%>
+                <% puts "#{exists}".red %>
+                <div class="d-flex justify-content-center text-center">
+                  <h4><%= user.first_name %> told us :</h4>
+                  </div> 
+                  <% exists = true %>
+                <% end %>
+              <% end %>
+              <div class="p-2"></div>    
+                <% gossips.each_with_index do |gossip, idx| %>   
+                <% gossip_identification = gossip.id %>                    
+                  <div class="d-flex justify-content-center text-center">
+                    <div class="card" style="width: 24rem;">
+                      <div class="card-body">
+                        <p class="card-text"><%= gossip.title %></p>
+                        <a class="btn btn-primary btn-sm" href="<%="/potin/#{gossip_identification - 1}"%>" role="button">Take a look !</a>
+                      </div>                   
+                    </div>                 
+                  </div>
+                  <div class="p-2"></div>
+                <% end %>             
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <div>
+      <footer class="container-fluid text-center">
+        <p>The Gossip Project - Made By SoMeOnE</p>
+      </footer>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<h3>Alors... Dit moi tout 👂🏼</h3>
+
+<%= form_with( model: @gossips, remote: false) do |form|%>
+
+    Titre:<br>
+    <%= form.text_field :title %><br/>
+
+    Contenu:<br>
+    <%= form.text_field :content %><br/><br/>
+
+    <p>Entre ton prénom:<%= form.text_field :first_name %>
+    <%= form.submit "Envoie la sauce!" %>
+<% end%>

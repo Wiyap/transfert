@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Gossip Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>    
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+  </style>
+</head>
+  <body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="<%="/"%>">The Gossip Project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="<%="/home"%>">Home </a>
+        </li>
+        <% if is_logged_in? == true%>
+          <li class="nav-item active">
+              <a class="nav-link" href="<%="/potin/new"%>">New gossip </a>
+            </li>
+          <% end %>
+        <li class="nav-item">
+          <a class="nav-link" href="<%="/contact"%>">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%="/team"%>">Team</a>
+        </li>
+      </ul>
+      <div class="d-flex flex-row-reverse">
+        <ul class="navbar-nav mr-auto">
+         <% if is_logged_in? != true%>
+          <li class="nav-item active">
+            <a class="nav-link" href="<%="/sessions/new"%>">Sign in</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="<%="/user/new"%>">Sign up</a>
+          </li>
+          <% else %>
+            <% puts session[:User_id] %>
+            <li class="nav-item active">
+              <a class="nav-link" <%= link_to "Logout", session_path(session.id), method: :delete %></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="<%="/dashboard"%>">Dashboard</a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<div class="container">
+  <div class="p-4"></div>
+  <h2><%= @gossip.title %></h2><br>
+  <p><%= @gossip.content %></p>
+  <% gossip_identification = @gossip.id %>
+  <p>Last updated the : <%= @gossip.updated_at.to_date %></p>
+  <% if current_user.id == @user.id%>
+    <a class="btn btn-primary btn-sm" href="<%= edit_potin_path(@potin) %>" role="button">Edit</a>
+    <a class="btn btn-secondary btn-sm" href="<%= potin_path(gossip_identification) %>" data-confirm="Are you sure you want to delete?" data-method="Delete" role="button">Delete</a>
+  <% end%>
+  <div class="p-4"></div>
+  <p>Written by : <%= @user.first_name %> <%= @user.last_name %></p>
+  <% user_id = @user.id %>
+  <a class="btn btn-primary btn-sm" href="<%="/user/#{user_id}"%>" role="button">See this creator</a>
+
+
+<div class="p-4"></div>
+<a class="btn btn-primary btn-sm" href="<%="/potin/#{gossip_identification}/commentaires/new"%>" role="button">Add à comment !</a>
+</div>
+
+<div class="p-4"></div>
+<div class="p-4"></div>
+<div class="container">
+ <h3> </h3>
+<% @comment.each do |comment| %>
+              <% comment_identification = comment.id %>
+              <div class="d-flex justify-content-center">
+                  <% gsp_usr = comment.user_id %>
+                  <% usr = User.find(gsp_usr) %>
+                  <div class="p-2"></div>
+                    <div class="card" style="width: 64rem; padding: 20px;">
+                      <div class="card-body">
+                        <h5 class="card-title"><%= "#{usr.first_name} comments :" %></h5>
+                        <p class="card-text"><%= comment.content %></p>
+                          <a class="btn btn-primary btn-sm" href="<%="/user/#{user_id}"%>" role="button">More about <%= @user.first_name %></a> 
+                          <% if current_user.id == usr.id%>
+                            <a class="btn btn-primary btn-sm" href="<%= "/potin/#{@gossip.id}/commentaires/#{comment.id}/edit" %>" role="button">Edit</a>
+                            <a class="btn btn-secondary btn-sm" href="<%= "/potin/#{@gossip.id}/commentaires/#{comment.id}" %>" data-confirm="Are you sure you want to delete?" data-method="Delete" role="button">Delete</a>
+                          <% end%>
+                      </div>           
+                    </div>
+                  </div>
+                  <div class="p-4"></div>
+              <% end %>
+
+
+</div>
+
+    <footer class="container-fluid text-center">
+      <p>The Gossip Project - Made By SoMeOnE</p>
+    </footer>
+ 
+
+</body>
+</html>

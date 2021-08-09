@@ -1,0 +1,70 @@
+
+<h1><%= @gossip.title%></h1>
+<p>Written by <%= link_to "#{@gossip.user.first_name}", user_path(@gossip.user_id) %>  <em>(<%= link_to @gossip.user.city.name, city_path(@gossip.user.city)%>)</em></p>
+<p class="m-2 mt-5 p-5 xshadow border bg-txt border-light"><%= @gossip.content %></p>
+
+<!-- LIKES -->
+<div class="d-flex gap-3">
+  <% liked = false %>
+    <% @gossip.likes.each do |like| %>
+    <% if like.user.id == Current.user.id   %>
+      <% liked = true %>
+    <% end %>
+  <% end %>
+    
+  <% if liked  %>
+    <%= link_to 'Disike', gossip_like_path(@gossip), method: :delete,  class: "btn btn-outline-danger" %>
+  <% else %>
+    <%= link_to 'Like', gossip_likes_path(@gossip), method: :post,  class: "btn btn-outline-primary" %>
+  <% end %>
+  
+  <div class="bg-primary p-2 ps-3 pe-3 rounded-3"><%= Like.all.length %> </div>
+</div>
+<p class="mt-4"><em class='text-grey'> - created the <%= @gossip.created_at.to_date %> -</em></p>
+<!-------------------------------------->
+
+<!-- Button for connected users -->
+<% if Current.user && Current.user.id == @gossip.user.id %>
+  <section class="col-6 d-flex justify-content-around m-5">
+    <button class='btn btn-outline-danger col-5'>
+      <%= link_to "Supprimer", gossip_path(@gossip),
+        method: :delete,
+        data: {confirm: "Supprimer ? (Attention, Pas de retour possible !)" }%>
+    </button>
+    <button class='btn btn-outline-warning col-5'><%= link_to :Modifier, edit_gossip_path %></button>
+
+  </section>
+<% end %>
+<!-------------------------------------->
+<!-- Comments -->
+<section class="xshadow border bg-txt borderi-light p-5 mt-4 col-5">
+  <h2>Commentaires :</h2>
+  <% @gossip.comments.each do |c| %> 
+    <p><%= c.content %><br/>
+      <% #LIEN POUR DELETE COMMENTAIRE ET UPDATE
+=begin%>
+ <%= link_to :Supprimer, edit_gossip_comment_path(c),
+        method: :delete,
+        data: { confirm: "Supprimer votre commentaire ?" }  %>
+      </p> 
+<%
+=end%>
+    <p><%= link_to c.author, user_path(c.user) %></p>
+  <% end %>
+</section>
+<!-------------------------------------->
+<!-- Comments Form -->
+<section class="col-12 mt-3 d-flex flex-column align-items-center">
+  <h2>Ajouter un commentaire :</h2>
+  <%= form_with(model: [ @gossip, @gossip.comments.build ], local: true) do |f| %>
+    <%= f.label :Commentaire %>
+    <%= f.text_area :content %>
+
+    <% if Current.user  %>
+        <%= f.hidden_field(:user_id, value: Current.user.id) %>
+    <% end %>
+    <%= f.submit "Valider" ,  class: 'btn btn-outline-success' %>
+      
+  <% end %> 
+</section>
+<!-------------------------------------->

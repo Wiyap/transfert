@@ -1,0 +1,15 @@
+<h1>Bienvenue sur le profil de <%= @user.first_name %> !</h1>
+<section class="col-5 bg-txt p-3 rounded-3 border border-light mb-5">
+<p>nom : <%= @user.last_name%></p>
+<p>prenom : <%=@user.first_name %></p>
+<p>age : <%= @user.age%></p>
+<p>mail : <%= @user.email%></p>
+<p>city : <%= link_to @user.city.name, city_path(@user.city)%></p>
+<p>desription : <%=@user.description %></p>
+</section>
+<section class="bg-txt p-3 rounded-3 border border-light">
+<h4> Liste des gossips de <%= @user.first_name %></h4>
+<% @user.gossips.each do |g| %>
+        <p><%= link_to g.title, gossip_path(g) %></p>
+<% end %>
+</section>

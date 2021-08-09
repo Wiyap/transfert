@@ -1,0 +1,2 @@
+Class time : https://www.tutorialspoint.com/ruby/ruby_date_time.htm
+Color in ruby : https://stackoverflow.com/questions/1489183/how-can-i-use-ruby-to-colorize-the-text-output-to-a-terminal

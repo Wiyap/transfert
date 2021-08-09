@@ -1,0 +1,13 @@
+<h1>Voici la team</h1>
+<div class="container d-flex flex-wrap col-10 gap-3 align-items-center justify-content-center mt-5 ">
+  <% @users.each do |user| %>
+    <div class="border border-light col-3 text-center p-4 xhover">
+      <h2>
+        <%= link_to "#{user.last_name}\n #{user.first_name}", user_path(user) %>
+        <br>
+        <%=  %></a>
+      </h2>
+      <p><%= user.description %></p>
+    </div>
+  <% end %>
+</div>

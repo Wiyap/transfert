@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+
+  <body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand" href="<%="/"%>">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="<%="/home"%>">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%="/contact"%>">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%="/team"%>">Team</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="p-4"></div>
+    <h1>The gossip mayhem</h1>
+<div class="p-4"></div>
+
+
+<div>
+  <% @gossip.each_with_index do |gossip, idx| %>
+      <% gsp_usr = gossip.user_id %>
+      <% usr = User.find(gsp_usr) %>
+      <div class="p-2"></div>
+      <div class="card" style="width: 18rem;">
+
+        <div class="card-body">
+          <h5 class="card-title"><%= "#{idx + 1} - #{usr.first_name} says :" %></h5>
+          <p class="card-text"><%= gossip.title %></p>
+          <a class="btn btn-primary btn-sm" href="<%="/potin/#{idx}"%>" role="button">Take a look !</a>
+        </div>
+      </div>
+  <% end %>
+</div>
+  </body>
+</html>

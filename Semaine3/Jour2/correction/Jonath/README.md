@@ -1,0 +1,1 @@
+# lib-00_hello.rb

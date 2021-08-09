@@ -1,0 +1,25 @@
+<%= form_with(model: gossip, local: true) do |f| %>
+
+    <%= f.label :titre %>
+    <%= f.text_field :title %>
+  <br /> <br />
+
+    <%= f.label :gossip %>
+    <%= f.text_area :content %>
+  <br /> <br />
+
+    <%= f.hidden_field(:user_id, value: Current.user.id) %>
+
+    <%= f.submit "Valider", class: 'btn btn-outline-success' %>
+  <br /> <br />
+
+  <% if @gossip.errors.any? %>
+    <p>Nous n'avons pas réussi à créer le potin pour la (ou les) raison(s) suivante(s) :</p>
+    <ul>
+      <% @gossip.errors.full_messages.each do |message| %>
+        <li class="alert alert-danger"><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+<% end %>

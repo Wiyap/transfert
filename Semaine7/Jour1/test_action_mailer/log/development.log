@@ -1,0 +1,349 @@
+  [1m[35m (1263.2ms)[0m  [1m[35mCREATE DATABASE "test_action_mailer_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (583.2ms)[0m  [1m[35mCREATE DATABASE "test_action_mailer_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (80.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (61.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5257908756930330060)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20210809070112)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (60.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20210809070112_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210809070112"]]
+  ↳ bin/rails:9
+  [1m[35m (10.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-08-09 07:16:11.664909"], ["updated_at", "2021-08-09 07:16:11.664909"]]
+  ↳ bin/rails:9
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5257908756930330060)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Estela Kuhic"], ["email", "russell@mills.com"], ["created_at", "2021-08-09 07:20:43.125544"], ["updated_at", "2021-08-09 07:20:43.125544"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Denise McClure"], ["email", "cedric@effertz-beatty.info"], ["created_at", "2021-08-09 07:20:43.136265"], ["updated_at", "2021-08-09 07:20:43.136265"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Clementina Orn"], ["email", "aliza@kulas-aufderhar.org"], ["created_at", "2021-08-09 07:20:43.144648"], ["updated_at", "2021-08-09 07:20:43.144648"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sen. Olin Bartoletti"], ["email", "mitchel.fritsch@lebsack.com"], ["created_at", "2021-08-09 07:20:43.153067"], ["updated_at", "2021-08-09 07:20:43.153067"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Wendi Satterfield"], ["email", "horacio@greenholt.biz"], ["created_at", "2021-08-09 07:20:43.161349"], ["updated_at", "2021-08-09 07:20:43.161349"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pres. Catarina Breitenberg"], ["email", "jospeh@okon-bosco.com"], ["created_at", "2021-08-09 07:20:43.169831"], ["updated_at", "2021-08-09 07:20:43.169831"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tyrone Wunsch"], ["email", "issac_krajcik@schmidt-olson.biz"], ["created_at", "2021-08-09 07:20:43.182035"], ["updated_at", "2021-08-09 07:20:43.182035"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Errol Kozey"], ["email", "lanell@raynor-hammes.com"], ["created_at", "2021-08-09 07:20:43.198915"], ["updated_at", "2021-08-09 07:20:43.198915"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Jolanda Daniel"], ["email", "katina_heidenreich@hyatt-terry.io"], ["created_at", "2021-08-09 07:20:43.215425"], ["updated_at", "2021-08-09 07:20:43.215425"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Williams Ledner"], ["email", "gerry@cremin.io"], ["created_at", "2021-08-09 07:20:43.232506"], ["updated_at", "2021-08-09 07:20:43.232506"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Rep. Alma Bayer"], ["email", "heriberto@hane-yost.co"], ["created_at", "2021-08-09 07:20:43.246998"], ["updated_at", "2021-08-09 07:20:43.246998"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Gov. Gus Sporer"], ["email", "kelsi_schmitt@hirthe.org"], ["created_at", "2021-08-09 07:20:43.254239"], ["updated_at", "2021-08-09 07:20:43.254239"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Alden Gusikowski"], ["email", "lindsay@torp.com"], ["created_at", "2021-08-09 07:20:43.262588"], ["updated_at", "2021-08-09 07:20:43.262588"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Nenita Pollich"], ["email", "devin_corwin@casper.io"], ["created_at", "2021-08-09 07:20:43.270397"], ["updated_at", "2021-08-09 07:20:43.270397"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Adena Kuhn"], ["email", "raymundo_huel@ferry.name"], ["created_at", "2021-08-09 07:20:43.289668"], ["updated_at", "2021-08-09 07:20:43.289668"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Byron Bashirian"], ["email", "kamala.gulgowski@kling-wilderman.info"], ["created_at", "2021-08-09 07:20:43.298474"], ["updated_at", "2021-08-09 07:20:43.298474"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Garret Kuvalis"], ["email", "beata.armstrong@ritchie.name"], ["created_at", "2021-08-09 07:20:43.315390"], ["updated_at", "2021-08-09 07:20:43.315390"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mr. Fred Toy"], ["email", "kieth@satterfield.io"], ["created_at", "2021-08-09 07:20:43.332069"], ["updated_at", "2021-08-09 07:20:43.332069"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mrs. Preston Graham"], ["email", "barton@kovacek.biz"], ["created_at", "2021-08-09 07:20:43.348721"], ["updated_at", "2021-08-09 07:20:43.348721"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Napoleon Lebsack"], ["email", "joe@roberts.org"], ["created_at", "2021-08-09 07:20:43.365501"], ["updated_at", "2021-08-09 07:20:43.365501"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Santa Kutch"], ["email", "catherina@smitham.net"], ["created_at", "2021-08-09 07:20:43.382284"], ["updated_at", "2021-08-09 07:20:43.382284"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Johnnie Bechtelar VM"], ["email", "bradley.bartell@ernser.biz"], ["created_at", "2021-08-09 07:20:43.397148"], ["updated_at", "2021-08-09 07:20:43.397148"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bradford Medhurst"], ["email", "leland.reilly@medhurst-anderson.org"], ["created_at", "2021-08-09 07:20:43.404429"], ["updated_at", "2021-08-09 07:20:43.404429"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mika Schamberger"], ["email", "betsy.stroman@kunde-rohan.biz"], ["created_at", "2021-08-09 07:20:43.411942"], ["updated_at", "2021-08-09 07:20:43.411942"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Jasmin Bernhard DVM"], ["email", "louanne_goldner@frami.com"], ["created_at", "2021-08-09 07:20:43.424218"], ["updated_at", "2021-08-09 07:20:43.424218"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Twanda Ruecker II"], ["email", "kirby_jerde@hilpert.biz"], ["created_at", "2021-08-09 07:20:43.441237"], ["updated_at", "2021-08-09 07:20:43.441237"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Laree O'Conner"], ["email", "jc.stiedemann@brekke.name"], ["created_at", "2021-08-09 07:20:43.458751"], ["updated_at", "2021-08-09 07:20:43.458751"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lakeesha Heidenreich"], ["email", "marcelino@anderson.com"], ["created_at", "2021-08-09 07:20:43.474196"], ["updated_at", "2021-08-09 07:20:43.474196"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Rocco McKenzie CPA"], ["email", "carlita@rath-hirthe.net"], ["created_at", "2021-08-09 07:20:43.488759"], ["updated_at", "2021-08-09 07:20:43.488759"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Nery Cummings"], ["email", "ariane@abshire.co"], ["created_at", "2021-08-09 07:20:43.497930"], ["updated_at", "2021-08-09 07:20:43.497930"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Msgr. Dana Marks"], ["email", "clair@prosacco-lubowitz.name"], ["created_at", "2021-08-09 07:20:43.513681"], ["updated_at", "2021-08-09 07:20:43.513681"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sen. Danial Wilkinson"], ["email", "lashell.stehr@aufderhar.com"], ["created_at", "2021-08-09 07:20:43.521931"], ["updated_at", "2021-08-09 07:20:43.521931"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Msgr. Carmen Moore"], ["email", "charley.cruickshank@gusikowski.co"], ["created_at", "2021-08-09 07:20:43.530376"], ["updated_at", "2021-08-09 07:20:43.530376"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Boyce Farrell"], ["email", "temika.windler@gutmann-wuckert.co"], ["created_at", "2021-08-09 07:20:43.538214"], ["updated_at", "2021-08-09 07:20:43.538214"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Edgar Legros"], ["email", "vickie@jakubowski.io"], ["created_at", "2021-08-09 07:20:43.546595"], ["updated_at", "2021-08-09 07:20:43.546595"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Madelaine McKenzie"], ["email", "trenton_wunsch@swift-mccullough.io"], ["created_at", "2021-08-09 07:20:43.555170"], ["updated_at", "2021-08-09 07:20:43.555170"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Loren Rosenbaum Jr."], ["email", "leann.daniel@abbott.org"], ["created_at", "2021-08-09 07:20:43.564302"], ["updated_at", "2021-08-09 07:20:43.564302"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Clotilde Harris"], ["email", "jeanne.morar@green.co"], ["created_at", "2021-08-09 07:20:43.571676"], ["updated_at", "2021-08-09 07:20:43.571676"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Delmar Pacocha"], ["email", "edward_hermann@oberbrunner.io"], ["created_at", "2021-08-09 07:20:43.580033"], ["updated_at", "2021-08-09 07:20:43.580033"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ms. Denis Herzog"], ["email", "donnie_schuster@volkman.io"], ["created_at", "2021-08-09 07:20:43.588553"], ["updated_at", "2021-08-09 07:20:43.588553"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pei Casper"], ["email", "nguyet_romaguera@schinner.net"], ["created_at", "2021-08-09 07:20:43.596719"], ["updated_at", "2021-08-09 07:20:43.596719"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Vanda Robel"], ["email", "randal@white-grant.com"], ["created_at", "2021-08-09 07:20:43.605138"], ["updated_at", "2021-08-09 07:20:43.605138"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lynwood Grimes"], ["email", "sammie@corwin.com"], ["created_at", "2021-08-09 07:20:43.613473"], ["updated_at", "2021-08-09 07:20:43.613473"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Archie Gislason PhD"], ["email", "kena@herzog.name"], ["created_at", "2021-08-09 07:20:43.622721"], ["updated_at", "2021-08-09 07:20:43.622721"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dinorah Zboncak"], ["email", "franklin_nienow@hessel.info"], ["created_at", "2021-08-09 07:20:43.630211"], ["updated_at", "2021-08-09 07:20:43.630211"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Prof. Josef Kassulke"], ["email", "timothy_crooks@kemmer-shields.co"], ["created_at", "2021-08-09 07:20:43.638621"], ["updated_at", "2021-08-09 07:20:43.638621"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Richard Mraz"], ["email", "mel_stamm@dooley-marks.net"], ["created_at", "2021-08-09 07:20:43.646732"], ["updated_at", "2021-08-09 07:20:43.646732"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Marcos Heller"], ["email", "lynnette_purdy@beatty.biz"], ["created_at", "2021-08-09 07:20:43.655115"], ["updated_at", "2021-08-09 07:20:43.655115"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Florida Farrell"], ["email", "derek_hayes@ullrich.info"], ["created_at", "2021-08-09 07:20:43.663466"], ["updated_at", "2021-08-09 07:20:43.663466"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Brandee Paucek"], ["email", "lanelle@ankunding.net"], ["created_at", "2021-08-09 07:20:43.671830"], ["updated_at", "2021-08-09 07:20:43.671830"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "lala"], ["email", "lala@email.com"], ["created_at", "2021-08-09 08:00:42.735770"], ["updated_at", "2021-08-09 08:00:42.735770"]]
+UserMailer#welcome_email: processed outbound mail in 15.1ms
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "lala"], ["email", "lala@email.com"], ["created_at", "2021-08-09 08:03:18.896897"], ["updated_at", "2021-08-09 08:03:18.896897"]]
+UserMailer#welcome_email: processed outbound mail in 13.1ms
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "lala"], ["email", "lala@email.com"], ["created_at", "2021-08-09 08:03:48.672672"], ["updated_at", "2021-08-09 08:03:48.672672"]]
+UserMailer#welcome_email: processed outbound mail in 8.2ms
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m

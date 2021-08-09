@@ -1,0 +1,12 @@
+<div class="position-relative">
+<h1><%= @city.name %></h1>
+
+
+  <% @city.users.each do |user| %>
+  <% user.gossips.each do |g| %>
+      <p><%= link_to g.title, gossip_path(g)%></p>
+      <% @likes += g.likes.length %>
+    <% end %>
+  <% end %>
+    <div class="bg-primary position-x p-2 ps-3 pe-3 rounded-3 "><%= @likes %> </div>
+</div>
